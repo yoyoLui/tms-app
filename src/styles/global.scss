@@ -1,0 +1,48 @@
+/* ============================================================
+ * 全局重置 / 基础样式
+ * ============================================================ */
+
+page {
+  width: 100%;
+  min-height: 100vh;
+  font-family: $ff-base;
+  font-size: $fs-lg;
+  line-height: 1.5;
+  color: $c-text-1;
+  background-color: $c-bg-page;
+  -webkit-font-smoothing: antialiased;
+}
+
+view, text, button, input {
+  box-sizing: border-box;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  &::after {
+    border: 0;
+  }
+}
+
+.h-flex {
+  display: flex;
+  align-items: center;
+}
+.h-flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.h-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text-mute   { color: $c-text-4; }
+.text-grey   { color: $c-text-3; }
+.text-strong { color: $c-text-1; font-weight: 600; }

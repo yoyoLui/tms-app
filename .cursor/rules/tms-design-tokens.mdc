@@ -1,0 +1,61 @@
+---
+description: tms-app 设计 token —— 颜色 / 字号 / 圆角 / 间距 / 阴影
+globs: **/*.{vue,scss}
+alwaysApply: false
+---
+
+# 设计 token 使用
+
+`src/styles/variables.scss` 已由 vite 全局注入，**所有 .vue / .scss 文件可直接使用**。
+**禁止在样式中硬编码** Figma 设计稿出现过的颜色/字号/间距值，统一引用 token。
+
+## 颜色
+
+| 用途 | token | 值 |
+|------|-------|-----|
+| 主色（冷链蓝） | `$c-primary` | `#1677FF` |
+| 主色亮/暗 | `$c-primary-light` / `$c-primary-dark` | `#4096FF` / `#0958D9` |
+| 成功 | `$c-success` | `#16A34A` |
+| 警告 | `$c-warning` | `#F59E0B` |
+| 危险 | `$c-danger` | `#DC2626` |
+| 文字 1~5 | `$c-text-1` … `$c-text-5` | `#0F172A` → `#CBD5E1`（从深到浅） |
+| 页面/卡片背景 | `$c-bg-page` / `$c-bg-card` | `#F5F7FA` / `#FFFFFF` |
+| 提示块（绿/橙/红/蓝） | `$c-bg-tip-g/o/r`、`$c-bg-soft` | 见 variables.scss |
+
+```scss
+// ❌ 不要写死
+color: #1677FF;
+background: #F5F7FA;
+
+// ✅ 用 token
+color: $c-primary;
+background: $c-bg-page;
+```
+
+## 字号（已乘以 2 为 rpx）
+
+`$fs-sm 22rpx` · `$fs-md 24rpx` · `$fs-base 26rpx` · `$fs-lg 28rpx` · `$fs-2xl 32rpx` · `$fs-4xl 36rpx`（页面标题）· `$fs-display-sm 44rpx`（收益）· `$fs-display 56rpx` · `$fs-score 88rpx`（详情大评分）
+
+## 间距 / 圆角
+
+- 间距：`$sp-1`～`$sp-12` 对应 4/8/12/16/20/24/28/32/40/48 rpx
+- 圆角：`$r-xs 8rpx`（信息格/标签）· `$r-sm 12rpx`（按钮）· `$r-md 16rpx`（小卡） · `$r-xl 24rpx`（主卡片，默认） · `$r-pill 999rpx`
+
+## 阴影
+
+- `$shadow-card`：所有白色卡片
+- `$shadow-btn`：主按钮（已在 `TmsButton type="primary"` 内置）
+
+## 卡片标准写法
+
+```scss
+.my-card {
+  margin-bottom: $sp-3;
+  padding: $sp-8;            // 16px → 32rpx
+  background-color: $c-bg-card;
+  border-radius: $r-xl;      // 24rpx
+  box-shadow: $shadow-card;
+}
+```
+
+直接使用 `<TmsSectionCard>` 可省掉以上样式。

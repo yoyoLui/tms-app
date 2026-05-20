@@ -1,0 +1,58 @@
+/* ============================================================
+ * 全局 SCSS Mixins
+ * ============================================================ */
+
+/* 单行省略 */
+@mixin ellipsis-1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 多行省略 */
+@mixin ellipsis-n($n: 2) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $n;
+  -webkit-box-orient: vertical;
+}
+
+/* 卡片基础样式 */
+@mixin card($padding: 32rpx, $radius: $r-xl) {
+  padding: $padding;
+  background-color: $c-bg-card;
+  border-radius: $radius;
+  box-shadow: $shadow-card;
+}
+
+/* flex 简写 */
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* iOS 底部安全区 */
+@mixin safe-bottom($base: 24rpx) {
+  padding-bottom: calc(#{$base} + env(safe-area-inset-bottom));
+}
+
+/* 主按钮渐变 */
+@mixin btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 96rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, $c-primary 0%, $c-primary-light 100%);
+  border-radius: $r-sm;
+  box-shadow: $shadow-btn;
+}

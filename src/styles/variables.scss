@@ -1,0 +1,93 @@
+/* ============================================================
+ * 设计 token —— 与 Figma 设计稿对齐
+ * 单位说明：uni-app 推荐 rpx；本项目设计稿基于 375px 宽度，
+ * 设计稿 1px = 2rpx；为保留设计稿精确度，绝大多数 SCSS 数值
+ * 直接使用 rpx，与设计稿 px 数值乘 2 对应。
+ * ============================================================ */
+
+/* 主色与品牌色 */
+$c-primary:        #1677FF;
+$c-primary-light:  #4096FF;
+$c-primary-dark:   #0958D9;
+$c-primary-cyan:   #22D3EE;
+
+/* 语义色 */
+$c-success:        #16A34A;
+$c-success-dark:   #15803D;
+$c-success-darker: #166534;
+$c-warning:        #F59E0B;
+$c-warning-dark:   #B45309;
+$c-warning-darker: #92400E;
+$c-danger:         #DC2626;
+$c-danger-dark:    #991B1B;
+
+/* 文本 */
+$c-text-1: #0F172A;  // 主标题、强调数字
+$c-text-2: #475569;  // 信息格内文字
+$c-text-3: #64748B;  // 次要文字、按钮文字
+$c-text-4: #94A3B8;  // 辅助说明
+$c-text-5: #CBD5E1;  // 禁用、未选中边框
+
+/* 背景 */
+$c-bg-page:    #F5F7FA;
+$c-bg-card:    #FFFFFF;
+$c-bg-info:    #F5F7FA;
+$c-bg-soft:    #EFF6FF;
+$c-bg-cyan:    #ECFEFF;
+$c-bg-tip-g:   #F0FDF4;
+$c-bg-tip-o:   #FFFBEB;
+$c-bg-tip-r:   #FEF2F2;
+$c-border-g:   #BBF7D0;
+$c-border-o:   #FDE68A;
+$c-border-r:   #FECACA;
+$c-border:     #E2E8F0;
+$c-border-soft:#F1F5F9;
+
+/* 字号（rpx = 2 × 设计稿 px） */
+$fs-2xs: 18rpx; // 9px
+$fs-xs:  20rpx; // 10px
+$fs-sm:  22rpx; // 11px
+$fs-md:  24rpx; // 12px
+$fs-base:26rpx; // 13px
+$fs-lg:  28rpx; // 14px
+$fs-xl:  30rpx; // 15px
+$fs-2xl: 32rpx; // 16px
+$fs-3xl: 34rpx; // 17px
+$fs-4xl: 36rpx; // 18px
+$fs-5xl: 40rpx; // 20px
+$fs-display-sm: 44rpx; // 22px
+$fs-display:    56rpx; // 28px
+$fs-display-lg: 64rpx; // 32px
+$fs-score:      88rpx; // 44px - 任务详情大评分
+
+/* 圆角 */
+$r-xs: 8rpx;
+$r-sm: 12rpx;
+$r-md: 16rpx;
+$r-lg: 20rpx;
+$r-xl: 24rpx;   // 主卡片
+$r-2xl: 32rpx;
+$r-pill: 999rpx;
+
+/* 间距 */
+$sp-1: 4rpx;
+$sp-2: 8rpx;
+$sp-3: 12rpx;
+$sp-4: 16rpx;
+$sp-5: 20rpx;
+$sp-6: 24rpx;
+$sp-7: 28rpx;
+$sp-8: 32rpx;
+$sp-10: 40rpx;
+$sp-12: 48rpx;
+
+/* 阴影 */
+$shadow-card: 0 4rpx 24rpx rgba(15, 23, 42, 0.04);
+$shadow-btn:  0 12rpx 32rpx rgba(22, 119, 255, 0.32);
+
+/* 通用 z-index */
+$z-fixed-bottom: 100;
+$z-modal: 1000;
+
+/* 字体族 */
+$ff-base: 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;

@@ -1,0 +1,27 @@
+{
+  "name": "冷链司机端",
+  "appid": "__UNI__TMS_APP",
+  "description": "冷链物流司机端小程序 - 智能推荐任务模块",
+  "versionName": "1.0.0",
+  "versionCode": "100",
+  "transformPx": false,
+  "h5": {
+    "title": "冷链司机端 · 智能推荐",
+    "router": {
+      "mode": "hash",
+      "base": "/"
+    }
+  },
+  "mp-weixin": {
+    "appid": "",
+    "setting": {
+      "urlCheck": false,
+      "es6": true,
+      "minified": true,
+      "postcss": true
+    },
+    "usingComponents": true,
+    "lazyCodeLoading": "requiredComponents"
+  },
+  "vueVersion": "3"
+}

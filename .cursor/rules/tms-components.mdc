@@ -1,0 +1,69 @@
+---
+description: tms-app 组件使用规范 —— TmsIcon、页面骨架、新增组件
+globs: **/*.vue
+alwaysApply: false
+---
+
+# tms-app · 组件使用
+
+## TmsIcon
+
+```vue
+<TmsIcon name="thermometer" :size="14" color="#1677FF" />
+```
+
+- `name` 来自 `src/components/base/icons.ts` 中已注册的图标
+- `size` 单位是**设计稿 px**（组件内部会 ×2 转 rpx）
+- 需要新图标时：在 `icons.ts` 的 `iconPathMap` 里添加 lucide-icons 风格 SVG 子内容（无外层 `<svg>` 标签，参考已有写法），不要在 `.vue` 文件里写 inline SVG
+
+## 页面骨架（4 个页面统一结构）
+
+```vue
+<template>
+  <view class="page-root">
+    <TmsNavBar title="..." :show-back="true" />
+
+    <scroll-view scroll-y class="scroll-area">
+      <view class="content">
+        <!-- 内容 -->
+      </view>
+    </scroll-view>
+
+    <TmsActionBar>            <!-- 底部操作可选 -->
+      <TmsButton type="primary" :flex="1" @click="..." />
+    </TmsActionBar>
+  </view>
+</template>
+
+<style lang="scss" scoped>
+.page-root  { display: flex; flex-direction: column; height: 100vh; background-color: $c-bg-page; }
+.scroll-area{ flex: 1; height: 0; }
+.content    { padding: 0 $sp-4 calc(180rpx + env(safe-area-inset-bottom)); }
+</style>
+```
+
+底部预留高度（180rpx 起步）需根据 `TmsActionBar` 的内容动态加大，**禁止**让操作栏遮挡内容。
+
+## 提示块 TmsTipBlock
+
+成功/警告/危险/信息 4 态：
+
+```vue
+<TmsTipBlock type="success" title="系统为何推荐给您">
+  <view v-for="r in reasons" :key="r">· {{ r }}</view>
+</TmsTipBlock>
+```
+
+颜色由组件内部 palette 控制，不要手动指定 background。
+
+## 添加新业务组件
+
+1. 文件放 `src/components/business/BizXxx.vue`
+2. props/emit 全部使用 `<script setup>` + TS 类型
+3. 共享类型放 `src/types/<模块>.ts`，组件内不要 export interface
+4. 模板内引用其他 Tms*/Biz* 组件无需 import
+5. 样式必须使用 `<style lang="scss" scoped>` + 设计 token
+
+## 跳转
+
+页面间跳转使用 `uni.navigateTo({ url: '/pages/recommend/xxx/index?id=...' })`，路径必须与 `pages.json` 的 `path` 一致。

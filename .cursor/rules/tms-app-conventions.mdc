@@ -1,0 +1,49 @@
+---
+description: tms-app（冷链司机端小程序）整体技术栈与文件组织约定
+alwaysApply: true
+---
+
+# tms-app · 项目约定
+
+## 技术栈（不要替换）
+
+- **uni-app 3.x** + **Vue 3** + **TypeScript 5**（严格模式）+ **Vite 5** + **Sass**
+- 状态管理：**Pinia**（已在 `src/main.ts` 注册）
+- 编译目标：**微信小程序（mp-weixin）+ H5**（命令见 `package.json`）
+- 路径别名：`@/` → `src/`
+
+## 目录组织
+
+```
+src/
+├─ pages/<模块>/<页面>/index.vue   # 路由由 pages.json 显式声明
+├─ components/base/Tms*.vue        # 无业务原子组件
+├─ components/business/Biz*.vue    # 业务组件
+├─ types/<模块>.ts                 # TS 类型
+├─ utils/                          # 工具函数
+├─ mock/<模块>.ts                  # mock 数据（接入接口后替换为 api/）
+└─ styles/{variables,mixins,global}.scss
+```
+
+## 组件命名 & 自动注册
+
+- 基础组件统一加 `Tms` 前缀，业务组件统一加 `Biz` 前缀
+- 已在 `pages.json` 配置 **easycom**：模板中可直接使用 `<TmsXxx />`、`<BizXxx />`，**无需 import**
+- script 中如需类型/方法引用才手动 import
+
+## Vue 写法
+
+- 一律使用 `<script setup lang="ts">` + 组合式 API
+- props 使用 `defineProps<Props>()` + `withDefaults`；emits 使用 `defineEmits<{...}>()`
+- 共享类型放 `src/types/<模块>.ts`，**禁止**从 `.vue` 文件 `export` 类型
+
+## 设计稿尺寸
+
+- 设计稿宽 **375px**；本项目统一用 **rpx**：`1 设计稿 px = 2 rpx`
+- 写样式时把设计稿 px 数值直接 × 2 得到 rpx；不要混用 px / rem
+- 字号、间距、圆角优先用 `variables.scss` 中已定义的 token（详见 `tms-design-tokens` 规则）
+
+## 跨平台注意
+
+- **不要**使用 `<svg>` 直接渲染（小程序不支持）。需要 SVG 时复用 `TmsIcon`，或参考 `BizScoreRing` / `BizTemperatureCard` 的「`data:image/svg+xml` → `<image>`」方案
+- **不要**写 `position: fixed` 时省略安全区 padding；底部固定栏统一用 `TmsActionBar`

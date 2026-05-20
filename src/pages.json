@@ -1,0 +1,53 @@
+{
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^Tms(.*)": "@/components/base/Tms$1.vue",
+      "^Biz(.*)": "@/components/business/Biz$1.vue"
+    }
+  },
+  "pages": [
+    {
+      "path": "pages/recommend/index/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#F5F7FA",
+        "backgroundColor": "#F5F7FA"
+      }
+    },
+    {
+      "path": "pages/recommend/detail/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#F5F7FA",
+        "backgroundColor": "#F5F7FA"
+      }
+    },
+    {
+      "path": "pages/recommend/confirm/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#F5F7FA",
+        "backgroundColor": "#F5F7FA"
+      }
+    },
+    {
+      "path": "pages/recommend/running/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#F5F7FA",
+        "backgroundColor": "#F5F7FA"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "冷链司机端",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#F5F7FA"
+  }
+}
