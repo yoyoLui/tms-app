@@ -68,6 +68,7 @@ $r-lg: 20rpx;
 $r-xl: 24rpx;   // 主卡片
 $r-2xl: 32rpx;
 $r-pill: 999rpx;
+$r-btn: 24rpx;  // 按钮圆角 12px
 
 /* 间距 */
 $sp-1: 4rpx;
@@ -83,7 +84,7 @@ $sp-12: 48rpx;
 
 /* 页面边距（设计稿 16px → 32rpx） */
 $page-padding-x: $sp-8;
-$page-padding-y: $sp-4;
+$page-padding-y: $sp-6;
 
 /* 阴影 */
 $shadow-card: 0 4rpx 24rpx rgba(15, 23, 42, 0.04);

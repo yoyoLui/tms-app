@@ -85,13 +85,14 @@ defineProps<Props>()
   gap: $sp-3;
 }
 .status-pill {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8rpx;
-  padding: 4rpx 16rpx;
+  padding: 6rpx 16rpx;
   background: rgba(255, 255, 255, 0.22);
   border-radius: $r-pill;
   font-size: $fs-sm;
+  line-height: 1.2;
 
   .dot {
     width: 12rpx;
@@ -126,13 +127,14 @@ defineProps<Props>()
   gap: $sp-2;
 }
 .info-pill {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6rpx;
-  padding: 8rpx 16rpx;
+  gap: 8rpx;
+  padding: 10rpx 20rpx;
   background: rgba(255, 255, 255, 0.18);
-  border-radius: $r-xs;
+  border-radius: $r-pill;
   font-size: $fs-sm;
+  line-height: 1.2;
   color: #fff;
 
   .dot-green {

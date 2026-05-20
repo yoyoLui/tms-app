@@ -45,7 +45,7 @@
 
 /* 页面滚动内容区内边距 */
 @mixin page-content($bottom: 180rpx) {
-  padding: $page-padding-y $page-padding-x calc(#{$bottom} + env(safe-area-inset-bottom));
+  padding: $page-padding-y $page-padding-x calc(#{$bottom} + #{$page-padding-y} + env(safe-area-inset-bottom));
 }
 
 /* 主按钮渐变 */
@@ -58,6 +58,6 @@
   font-weight: 600;
   color: #fff;
   background: linear-gradient(135deg, $c-primary 0%, $c-primary-light 100%);
-  border-radius: $r-sm;
+  border-radius: $r-btn;
   box-shadow: $shadow-btn;
 }

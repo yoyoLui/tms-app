@@ -44,7 +44,7 @@ const heightRpx = computed(() => `${props.height * 2}rpx`)
   font-family: $ff-base;
   font-size: $fs-xl;
   font-weight: 500;
-  border-radius: $r-sm;
+  border-radius: $r-btn;
   transition: opacity 0.18s ease;
 
   &.disabled {
