@@ -81,6 +81,10 @@ $sp-8: 32rpx;
 $sp-10: 40rpx;
 $sp-12: 48rpx;
 
+/* 页面边距（设计稿 16px → 32rpx） */
+$page-padding-x: $sp-8;
+$page-padding-y: $sp-4;
+
 /* 阴影 */
 $shadow-card: 0 4rpx 24rpx rgba(15, 23, 42, 0.04);
 $shadow-btn:  0 12rpx 32rpx rgba(22, 119, 255, 0.32);

@@ -106,7 +106,7 @@ function acceptTask(task: RecommendTask) {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: $sp-3 $sp-4;
+  padding: $page-padding-y $page-padding-x;
 }
 .header-title {
   font-size: $fs-4xl;
@@ -145,7 +145,7 @@ function acceptTask(task: RecommendTask) {
   height: 0;
 }
 .content {
-  padding: 0 $sp-4 calc(180rpx + env(safe-area-inset-bottom));
+  @include page-content(180rpx);
 }
 
 .filter-row {
@@ -153,7 +153,6 @@ function acceptTask(task: RecommendTask) {
   align-items: center;
   justify-content: space-between;
   margin-bottom: $sp-2;
-  padding: 0 4rpx;
 }
 .filters {
   display: flex;

@@ -75,7 +75,7 @@ const statusBarHeight = computed(() => {
   display: flex;
   align-items: center;
   height: 88rpx;
-  padding: 0 $sp-4;
+  padding: 0 $page-padding-x;
 }
 .nav-left,
 .nav-right {

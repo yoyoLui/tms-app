@@ -103,7 +103,7 @@ function navigate() {
   height: 0;
 }
 .content {
-  padding: 0 $sp-4 calc(180rpx + env(safe-area-inset-bottom));
+  @include page-content(180rpx);
 }
 
 /* 当前位置卡 */

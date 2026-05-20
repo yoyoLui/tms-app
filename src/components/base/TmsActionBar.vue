@@ -23,7 +23,7 @@
   bottom: 0;
   left: 0;
   z-index: $z-fixed-bottom;
-  padding: $sp-3 $sp-4 calc(#{$sp-6} + env(safe-area-inset-bottom));
+  padding: $sp-3 $page-padding-x calc(#{$sp-6} + env(safe-area-inset-bottom));
   background-color: #fff;
   border-top: 1rpx solid $c-border-soft;
 }

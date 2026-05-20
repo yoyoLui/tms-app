@@ -43,6 +43,11 @@
   padding-bottom: calc(#{$base} + env(safe-area-inset-bottom));
 }
 
+/* 页面滚动内容区内边距 */
+@mixin page-content($bottom: 180rpx) {
+  padding: $page-padding-y $page-padding-x calc(#{$bottom} + env(safe-area-inset-bottom));
+}
+
 /* 主按钮渐变 */
 @mixin btn-primary {
   display: flex;

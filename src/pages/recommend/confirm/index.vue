@@ -153,7 +153,7 @@ function confirmAccept() {
   height: 0;
 }
 .content {
-  padding: 0 $sp-4 calc(260rpx + env(safe-area-inset-bottom));
+  @include page-content(260rpx);
 }
 
 /* 摘要卡 */

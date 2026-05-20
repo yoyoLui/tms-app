@@ -124,7 +124,7 @@ function callShipper() {
   height: 0;
 }
 .content {
-  padding: 0 $sp-4 calc(220rpx + env(safe-area-inset-bottom));
+  @include page-content(220rpx);
 }
 .info-grid {
   display: grid;
